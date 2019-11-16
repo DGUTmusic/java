@@ -1,14 +1,15 @@
 
 
 ### 思维导图
+![img](https://github.com/DGUTmusic/java/blob/master/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.jpg)
 
 
-![](https://github.com/DGUTmusic/java/blob/master/E-R%E5%9B%BE.png)
 
 
 ### E-R图
+![](https://github.com/DGUTmusic/java/blob/master/E-R%E5%9B%BE.png)
 
-![img](https://github.com/DGUTmusic/java/blob/master/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.jpg)
+
 
 ### 数据字典
 
