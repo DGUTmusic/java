@@ -1,20 +1,24 @@
 package com.example.music.bean;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
+@Scope("prototype")
 public class Detail {
     private int state;
     private String message;
 
     private Map<Object, Object> map;
 
-    public Detail(){
-        state = 200;
-        message = "成功";
-        map = new HashMap<>();
+    public Detail() {
+        this.state = 200;
+        this.message = "success";
+        this.map = new HashMap<>();
     }
-
     public int getState() {
         return state;
     }
