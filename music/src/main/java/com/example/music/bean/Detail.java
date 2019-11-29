@@ -15,9 +15,6 @@ public class Detail {
         map = new HashMap<>();
     }
 
-    private void setMap(String song, Song song1) {
-    }
-
     public int getState() {
         return state;
     }
