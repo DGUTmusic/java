@@ -8,6 +8,7 @@ public class Song {
     private Integer hits;
     private Integer download;
     private Integer songType;
+    private String imageUrl;
 
     public Integer getSongID() {
         return songID;
@@ -76,5 +77,13 @@ public class Song {
                 ", download=" + download +
                 ", songType=" + songType +
                 '}';
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

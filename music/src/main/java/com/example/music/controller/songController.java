@@ -25,6 +25,7 @@ public class songController {
         }else{
             detail.setState(400);
             detail.setMessage("不存在这首歌。");
+            detail.getMap().clear();
         }
         return detail;
     }
