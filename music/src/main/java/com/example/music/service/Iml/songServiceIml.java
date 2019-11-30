@@ -14,7 +14,7 @@ public class songServiceIml implements songService {
     SongMapper songMapper;
     @Override
     //使用redis缓存
-    @Cacheable(cacheNames = "song")
+    @Cacheable(cacheNames = "song", unless = "#result == null ")
     public Song getSongById(Integer songID) {
         return songMapper.getSongById(songID);
     }

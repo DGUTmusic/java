@@ -20,6 +20,7 @@ class MusicApplicationTests {
     RedisTemplate redisTemplate;  //k-v都是对象的
     @Autowired
     SongMapper songMapper;
+
     //记录器
     Logger logger = LoggerFactory.getLogger(getClass());
     @Test
@@ -36,7 +37,7 @@ class MusicApplicationTests {
         //2.使用JsonUtils保存对象
         stringRedisTemplate.opsForValue().set("zyr-new",JsonUtils.objectToJson(song));
         System.out.println(JsonUtils.jsonToPojo(stringRedisTemplate.opsForValue().get("zyr-new"),Song.class));
-        //2.使用stringRedisTemplate保存字符串，数组
+        //3.使用stringRedisTemplate保存字符串，数组
 //		  stringRedisTemplate.opsForList().leftPush("mylist","1");
 //        stringRedisTemplate.opsForList().leftPush("mylist","2");
 //        stringRedisTemplate.opsForList().leftPush("mylist","zyr");
@@ -68,4 +69,5 @@ class MusicApplicationTests {
         System.out.println(song);
         logger.info(song.toString());
     }
+
 }
