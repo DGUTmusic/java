@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class songServiceIml implements songService {
 
@@ -17,5 +19,15 @@ public class songServiceIml implements songService {
     @Cacheable(cacheNames = "song", unless = "#result == null ")
     public Song getSongById(Integer songID) {
         return songMapper.getSongById(songID);
+    }
+
+    @Cacheable(cacheNames = "song", unless = "#result == null ")
+    public List<Song> getSongByName(String songName) {
+        return songMapper.getSongByName(songName);
+    }
+
+    @Cacheable(cacheNames = "song", unless = "#result == null ")
+    public List<Song> getSongBySinger(String singer) {
+        return songMapper.getSongBySinger(singer);
     }
 }

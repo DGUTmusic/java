@@ -18,6 +18,17 @@
         SELECT *  FROM song AS s
         WHERE s.songID=#{songID}
     </select>
+    <select id="getSongByName" resultType="com.example.music.bean.Song">
+        select *  FROM song AS s
+        WHERE s.songName like '%${songName}%'
+    </select>
+    <select id="getSongBySinger" resultType="com.example.music.bean.Song">
+        SELECT * FROM song AS s
+        WHERE s.singer LIKE '%${singer}%'
+    </select>
+    <select id="">
+
+    </select>
     <!--<select id="getEmpById" resultType="com.example.demodruid.bean.Employee">-->
         <!--SELECT * FROM employee WHERE id=#{id}-->
     <!--</select>-->

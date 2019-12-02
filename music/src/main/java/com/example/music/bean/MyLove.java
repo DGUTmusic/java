@@ -1,13 +1,13 @@
 package com.example.music.bean;
 
-public class myLove {
+public class MyLove {
     private Integer loveID;
     private Integer userID;
     private Integer songID;
 
     @Override
     public String toString() {
-        return "myLove{" +
+        return "MyLove{" +
                 "loveID=" + loveID +
                 ", userID=" + userID +
                 ", songID=" + songID +

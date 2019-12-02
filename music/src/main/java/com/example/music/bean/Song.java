@@ -7,7 +7,7 @@ public class Song {
     private String  fileUrl;
     private Integer hits;
     private Integer download;
-    private Integer songType;
+    private Integer songType; //1-流行音乐；2-说唱；3-舞曲；4-民谣；5-其他的
     private String imageUrl;
 
     public Integer getSongID() {

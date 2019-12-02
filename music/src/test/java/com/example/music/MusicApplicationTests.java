@@ -37,6 +37,7 @@ class MusicApplicationTests {
         //2.使用JsonUtils保存对象
         stringRedisTemplate.opsForValue().set("zyr-new",JsonUtils.objectToJson(song));
         System.out.println(JsonUtils.jsonToPojo(stringRedisTemplate.opsForValue().get("zyr-new"),Song.class));
+        stringRedisTemplate.delete("zyr-new");
         //3.使用stringRedisTemplate保存字符串，数组
 //		  stringRedisTemplate.opsForList().leftPush("mylist","1");
 //        stringRedisTemplate.opsForList().leftPush("mylist","2");

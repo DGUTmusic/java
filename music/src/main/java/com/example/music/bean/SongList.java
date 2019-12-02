@@ -2,7 +2,7 @@ package com.example.music.bean;
 
 import java.util.Date;
 
-public class songList {
+public class SongList {
     private Integer songListID;
     private String songListName;
     private Integer createUserID;
@@ -60,7 +60,7 @@ public class songList {
 
     @Override
     public String toString() {
-        return "songList{" +
+        return "SongList{" +
                 "songListID=" + songListID +
                 ", songListName='" + songListName + '\'' +
                 ", createUserID=" + createUserID +

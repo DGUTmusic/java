@@ -1,6 +1,6 @@
 package com.example.music.bean;
 
-public class songListDetail {
+public class SongListDetail {
     private Integer songListID;
     private Integer songID;
 
@@ -22,7 +22,7 @@ public class songListDetail {
 
     @Override
     public String toString() {
-        return "songListDetail{" +
+        return "SongListDetail{" +
                 "songListID=" + songListID +
                 ", songID=" + songID +
                 '}';
