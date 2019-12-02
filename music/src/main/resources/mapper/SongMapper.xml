@@ -3,17 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.music.mapper.SongMapper">
-    <!--<resultMap id="emp_dep" type="com.example.demodruid.bean.emp_dep">-->
-        <!--<id property="id" column="id"></id>-->
-        <!--<result property="lastName" column="lastName"></result>-->
-        <!--<result property="gender" column="gender"></result>-->
-        <!--<result property="email" column="email"></result>-->
-        <!--<result property="dId" column="d_id"></result>-->
-        <!--<association property="department" column="department">-->
-            <!--<result property="departmentName" column="departmentName"></result>-->
-        <!--</association>-->
-    <!--</resultMap>-->
-
     <select id="getSongById" resultType="com.example.music.bean.Song">
         SELECT *  FROM song AS s
         WHERE s.songID=#{songID}

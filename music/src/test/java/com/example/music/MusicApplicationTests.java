@@ -1,6 +1,7 @@
 package com.example.music;
 
 import com.example.music.bean.Song;
+import com.example.music.mapper.SongListMapper;
 import com.example.music.mapper.SongMapper;
 import com.example.music.utils.JsonUtils;
 import org.junit.jupiter.api.Test;
@@ -20,6 +21,8 @@ class MusicApplicationTests {
     RedisTemplate redisTemplate;  //k-v都是对象的
     @Autowired
     SongMapper songMapper;
+    @Autowired
+    SongListMapper songListMapper;
 
     //记录器
     Logger logger = LoggerFactory.getLogger(getClass());
@@ -71,4 +74,8 @@ class MusicApplicationTests {
         logger.info(song.toString());
     }
 
+    @Test
+    public void testResultMap(){
+        System.out.println(songListMapper.getSongList());
+    }
 }

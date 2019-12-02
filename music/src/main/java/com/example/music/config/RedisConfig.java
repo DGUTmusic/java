@@ -20,7 +20,7 @@ import java.time.Duration;
 @EnableCaching
 public class RedisConfig {
     //过期时间30秒
-    private Duration timeToLive = Duration.ofSeconds(30L);
+    private Duration timeToLive = Duration.ofSeconds(60L);
     Logger log= LoggerFactory.getLogger(getClass());
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
