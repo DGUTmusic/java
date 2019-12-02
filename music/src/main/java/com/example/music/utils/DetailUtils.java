@@ -1,11 +1,13 @@
 package com.example.music.utils;
 
 import com.example.music.bean.Detail;
+import com.github.pagehelper.Page;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 @Component
-public class detailUtils {
+public class DetailUtils {
 
     public static Detail addList(List list) {
         Detail detail = new Detail();
@@ -16,7 +18,6 @@ public class detailUtils {
         } else {
             detail.setState(400);
             detail.setMessage("查询不到相关的数据！");
-            //detail.getMap().clear();
         }
         return detail;
     }
@@ -30,7 +31,26 @@ public class detailUtils {
         } else {
             detail.setState(400);
             detail.setMessage("查询不到相关的数据！");
-            //detail.getMap().clear();
+        }
+        return detail;
+    }
+    public static Detail addPage(Page page) {
+        Detail detail = new Detail();
+        HashMap hashMap=new HashMap();
+        hashMap.put("total",page.getTotal());
+        hashMap.put("startRow",page.getStartRow());
+        hashMap.put("endRow",page.getEndRow());
+        hashMap.put("pageSize",page.getPageSize());
+        hashMap.put("pageNum",page.getPageNum());
+        hashMap.put("pages",page.getPages());
+        if (page.size() != 0) {
+            detail.setState(200);
+            detail.setMessage("OK");
+            detail.getMap().put("list", page);
+            detail.getMap().put("page",hashMap);
+        } else {
+            detail.setState(400);
+            detail.setMessage("查询不到相关的数据！");
         }
         return detail;
     }

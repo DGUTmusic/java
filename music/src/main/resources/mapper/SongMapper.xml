@@ -26,8 +26,9 @@
         SELECT * FROM song AS s
         WHERE s.singer LIKE '%${singer}%'
     </select>
-    <select id="">
-
+    <select id="getSongByRanking" resultType="com.example.music.bean.Song">
+        SELECT * FROM song AS s
+        ORDER BY s.hits DESC
     </select>
     <!--<select id="getEmpById" resultType="com.example.demodruid.bean.Employee">-->
         <!--SELECT * FROM employee WHERE id=#{id}-->

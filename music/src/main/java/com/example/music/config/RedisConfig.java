@@ -18,7 +18,7 @@ import java.time.Duration;
 
 @Configuration
 @EnableCaching
-public class redisConf {
+public class RedisConfig {
     //过期时间30秒
     private Duration timeToLive = Duration.ofSeconds(30L);
     Logger log= LoggerFactory.getLogger(getClass());

@@ -42,4 +42,13 @@ public class Detail {
     public void setMap(Map<Object, Object> map) {
         this.map = map;
     }
+
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "state=" + state +
+                ", message='" + message + '\'' +
+                ", map=" + map +
+                '}';
+    }
 }
