@@ -13,4 +13,5 @@ import java.util.List;
 public interface SongListMapper {
     public List<SongListDTO> getSongListDetail();
     public Page<SongList> getSongList();
+    public List<SongList> getSongListByName(String songListName);
 }

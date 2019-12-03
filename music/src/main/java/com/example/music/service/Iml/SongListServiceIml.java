@@ -33,4 +33,11 @@ public class SongListServiceIml implements SongListService {
         Page<SongList> lists=songListMapper.getSongList();
         return DetailUtils.addPage(lists);
     }
+
+    @Override
+    @Cacheable(cacheNames = "SongListName", unless = "#result == null ")
+    public Detail getSongListByName(String songListName) {
+        List<SongList> lists=songListMapper.getSongListByName(songListName);
+        return DetailUtils.addList(lists);
+    }
 }

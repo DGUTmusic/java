@@ -30,4 +30,8 @@
     <select id="getSongList" resultType="com.example.music.bean.SongList">
         SELECT * FROM songlist
     </select>
+    <select id="getSongListByName" resultType="com.example.music.bean.SongList">
+        SELECT * FROM songlist AS s
+        WHERE s.songListName LIKE '%${songListName}%'
+    </select>
 </mapper>

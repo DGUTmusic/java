@@ -22,4 +22,10 @@ public class SongListController {
     public Detail getSongList(int pageNum, int pageSize){
         return songListService.getSongList(pageNum,pageSize);
     }
+
+    //根据歌单名字查找歌单
+    @GetMapping("/song/songListByName")
+    public Detail getSongListByName(String songListName){
+        return songListService.getSongListByName(songListName);
+    }
 }
