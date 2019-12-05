@@ -48,27 +48,24 @@ public class IpUtils {
                 }
             }
         } catch (Exception e) {
-            //log.info("bug:", e);
             ipAddress = "";
         }
-        //log.info(ipAddress);
         return ipAddress;
     }
     public  Boolean redisIP(HttpServletRequest request){
         String ip=this.getIpAddr(request);
         if(stringRedisTemplate.hasKey("IP:"+ip)){
             stringRedisTemplate.opsForValue().increment("IP:"+ip);
-            if(Integer.parseInt(stringRedisTemplate.opsForValue().get("IP:"+ip))>=3){
+            if(Integer.parseInt(stringRedisTemplate.opsForValue().get("IP:"+ip))>=5){
                 System.out.println("IP访问次数超过，防止洪水攻击！！！");
-                //log.info("----IP访问次数超过，防止洪水攻击！！！----");
-                //return "IP访问次数超过，防止洪水攻击！！！";
+                //IP访问次数超过，防止洪水攻击
                 return false;
             }
         }else {
             stringRedisTemplate.opsForValue().set("IP:"+ip,"1");
             stringRedisTemplate.expire("IP:"+ip,30L, TimeUnit.SECONDS);
         }
-        //return "正常访问！";
+        //正常访问
         return true;
     }
 }
